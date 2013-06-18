@@ -1,0 +1,20 @@
+{% extends "prototype/base.html" %}
+
+{% block header %}
+<style type="text/css">
+.search_bar {
+    width: 300px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h3>Search article by title</h3>
+<form method="get" action="/prototype/">
+<input type="text" name="q" value="{{q}}"class="search_bar"/>
+<input type="submit"/>
+</form>
+{% for rec in records %}
+{{rec}}<br />
+{% endfor %}
+{% endblock %}
